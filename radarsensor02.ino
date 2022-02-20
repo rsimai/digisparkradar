@@ -1,6 +1,7 @@
 #include <DigiCDC.h>
 
 int in;
+int count;
 
 void setup() {                
   // initialize 
@@ -16,7 +17,8 @@ void loop() {
   if (in == HIGH) {
     digitalWrite(1, HIGH);
     if (SerialUSB.available()) {
-      SerialUSB.println('a');
+      SerialUSB.println(count);
+      count++;
     }
   }
   else {
